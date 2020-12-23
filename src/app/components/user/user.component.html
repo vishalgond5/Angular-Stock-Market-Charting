@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="#">IPO's</a>
+      <a class="nav-item nav-link" href="#">Compare companies</a>
+      <a class="nav-item nav-link" href="#">Compare sectors</a>
+      <a class="nav-item nav-link" href="#">Others</a>
+    </div>
+    <div class="ml-auto">
+      <form
+        [formGroup]="searchForm"
+        (ngSubmit)="search()"
+        class="form-inline mr-auto"
+      >
+        <input
+          type="search"
+          class="form-control mr-sm-2"
+          type="search"
+          [formControlName]="'search'"
+          [(ngModel)]="searchText"
+          placeholder="Search for a Company"
+          id="search"
+          name="search"
+        />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div [hidden]="!dataLoaded" class="container-fluid" style="margin-top: 40px;">
+  <div class="card" style="width: auto; padding-top: 20px; padding-left: 20px;">
+    <dl class="row">
+      <dt class="col-sm-3">Company Name:</dt>
+      <dd class="col-sm-9">{{company.companyName}}</dd>
+      <dt class="col-sm-3">Description:</dt>
+      <dd class="col-sm-9">{{company.description}}</dd>
+      <dt class="col-sm-3">CEO:</dt>
+      <dd class="col-sm-9">{{company.ceo}}</dd>
+      <dt class="col-sm-3">Turnover:</dt>
+      <dd class="col-sm-9">{{company.turnover}}</dd>
+      <dt class="col-sm-3">Board of Directors:</dt>
+      <dd class="col-sm-9">{{company.boardOfDirectors}}</dd>
+      <dt class="col-sm-3">Sector:</dt>
+      <dd class="col-sm-9">{{company.sector}}</dd>
+    </dl>
+  </div>
+</div>

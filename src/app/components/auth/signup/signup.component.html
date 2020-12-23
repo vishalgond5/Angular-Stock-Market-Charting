@@ -1,0 +1,122 @@
+<div class="signup-section">
+  <div class="row justify-content-center">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header" style="text-align: center;">
+          <h4>Sign up</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="signupForm" (ngSubmit)="signup()">
+            <div class="form-group row">
+              <label for="eMail" class="col-md-4 col-form-label text-md-right"
+                >E-Mail</label
+              >
+              <div class="col-md-6">
+                <input
+                  type="text"
+                  [formControlName]="'eMail'"
+                  id="eMail"
+                  class="form-control"
+                  name="eMail"
+                  required
+                  autofocus
+                />
+                <span
+                  *ngIf="!signupForm.get('eMail').valid && signupForm.get('eMail').touched"
+                >
+                  Please provide a valid eMail
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label
+                for="userName"
+                class="col-md-4 col-form-label text-md-right"
+                >Username</label
+              >
+              <div class="col-md-6">
+                <input
+                  type="text"
+                  [formControlName]="'userName'"
+                  id="userName"
+                  class="form-control"
+                  name="userName"
+                  required
+                  autofocus
+                />
+                <span
+                  *ngIf="!signupForm.get('userName').valid && signupForm.get('userName').touched"
+                >
+                  Please provide a valid userName
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label
+                for="password"
+                class="col-md-4 col-form-label text-md-right"
+                >Password</label
+              >
+              <div class="col-md-6">
+                <input
+                  type="password"
+                  [formControlName]="'password'"
+                  id="password"
+                  class="form-control"
+                  name="password"
+                  required
+                />
+                <span
+                  *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched"
+                >
+                  Please provide a valid password
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label
+                for="mobileNo"
+                class="col-md-4 col-form-label text-md-right"
+                >Mobile no</label
+              >
+              <div class="col-md-6">
+                <input
+                  type="number"
+                  [formControlName]="'mobileNo'"
+                  id="mobileNo"
+                  class="form-control"
+                  name="mobileNo"
+                  required
+                />
+                <span
+                  *ngIf="!signupForm.get('mobileNo').valid && signupForm.get('mobileNo').touched"
+                >
+                  Please provide a valid mobile number
+                </span>
+              </div>
+            </div>
+
+            <span class="col-md-6 offset-md-4">
+              <div style="text-align: center; margin-top: -1em;">
+                <button
+                  type="submit"
+                  class="btn btn-sm btn-success ml-auto mb-2"
+                >
+                  Sign Up
+                </button>
+              </div>
+              <div style="text-align: center;">
+                <span>Existing user? <a routerLink="/login">Log In</a></span>
+              </div>
+            </span>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>

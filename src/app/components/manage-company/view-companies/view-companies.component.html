@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <div class="panel panel-primary">
+    <div class="panel-heading" style="padding-top: 20px;">
+      <h5>Companies Listed</h5>
+    </div>
+    <div class="panel-body" style="padding-top: 20px;">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Company name</th>
+            <th>Description</th>
+            <th>CEO</th>
+            <th>Board of directors</th>
+            <th>Sector name</th>
+            <th>Stock Exchanges</th>
+            <th>Turnover</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let company of companies | async; let i = index">
+            <td>{{i}}</td>
+            <td>{{company.companyName}}</td>
+            <td>{{company.description}}</td>
+            <td>{{company.ceo}}</td>
+            <td>{{company.boardOfDirectors}}</td>
+            <td>{{company.sector}}</td>
+            <td>{{company.stockExchanges}}</td>
+            <td>{{company.turnover}}</td>
+            <td>
+              <button
+                class="btn btn-danger btn-sm"
+                (click)="deleteCompany(company.companyId)"
+              >
+                Delete
+              </button>
+              <button
+                class="btn btn-info btn-sm"
+                style="margin-left: 10px;"
+                (click)="updateCompany(company.companyName)"
+              >
+                Update
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- (click)="deleteCompany(employee.companyName)"
+(click)="updateEmployee(employee.companyName)" -->

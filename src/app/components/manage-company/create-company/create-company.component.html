@@ -1,0 +1,94 @@
+<div class="container-fluid">
+  <div class="panel-heading" style="padding-top: 20px;">
+    <h5>Add new company</h5>
+  </div>
+
+  <div class="card" style="width: 600px; padding: 20px; margin-top: 10px;">
+    <form [formGroup]="addCompanyForm" (ngSubmit)="addCompany()">
+      <div class="form-group">
+        <label for="companyName">Company Name</label>
+        <input
+          type="text"
+          [formControlName]="'companyName'"
+          class="form-control"
+          name="companyName"
+          id="companyName"
+          [(ngModel)]="company.companyName"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Company description</label>
+        <textarea
+          [formControlName]="'description'"
+          class="form-control"
+          name="description"
+          id="description"
+          rows="3"
+          [(ngModel)]="company.description"
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="ceo">CEO</label>
+        <input
+          type="text"
+          [formControlName]="'ceo'"
+          class="form-control"
+          name="ceo"
+          id="ceo"
+          [(ngModel)]="company.ceo"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="boardOfDirectors">Board of directors</label>
+        <textarea
+          [formControlName]="'boardOfDirectors'"
+          class="form-control"
+          name="boardOfDirectors"
+          id="boardOfDirectors"
+          rows="2"
+          [(ngModel)]="company.boardOfDirectors"
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="turnover">Turnover</label>
+        <input
+          type="text"
+          [formControlName]="'turnover'"
+          class="form-control"
+          name="turnover"
+          id="turnover"
+          [(ngModel)]="company.turnover"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="sector">Sector</label>
+        <input
+          type="text"
+          [formControlName]="'sector'"
+          class="form-control"
+          name="sector"
+          id="sector"
+          [(ngModel)]="company.sector"
+        />
+      </div>
+      <div class="form-group">
+        <label for="stockExchanges">Stock Exchanges</label>
+        <input
+          type="text"
+          [formControlName]="'stockExchanges'"
+          class="form-control"
+          name="stockExchanges"
+          id="stockExchanges"
+          [(ngModel)]="company.stockExchanges"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+    </form>
+  </div>
+</div>

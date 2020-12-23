@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="panel panel-primary">
+    <div class="panel-heading" style="padding-top: 20px;">
+      <h5>Stock Exchanges Listed</h5>
+    </div>
+    <div class="panel-body" style="padding-top: 20px;">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Stock Exchange</th>
+            <th class="desc">Description</th>
+            <th>Contact address</th>
+            <th>Remarks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let stockExchange of stockExchanges | async; let i = index"
+          >
+            <td>{{i}}</td>
+            <td>{{stockExchange.stockExchangeName}}</td>
+            <td>{{stockExchange.stockExchangeBrief}}</td>
+            <td>{{stockExchange.stockExchangeAddress}}</td>
+            <td>{{stockExchange.stockExchangeRemarks}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

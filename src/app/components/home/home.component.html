@@ -1,0 +1,49 @@
+<div class="jumbotron bg-secondary text-light mt-0 mb-5 pt-0 pb-5">
+  <h1 class="display-2">Comparing the Stock Prices has become easy</h1>
+  <p class="lead">
+    Login to your Account to Start Comparing. <br />
+    If not a user don't worry you can sign up easily...
+  </p>
+  <!-- <a class="btn btn-lg btn-success m-1" routerLink="signup" role="button"
+    >Sign Up</a
+  >
+  <a class="btn btn-lg btn-info m-1" routerLink="login" role="button">Log In</a> -->
+  <span>
+    <a
+      [routerLink]="['/signup']"
+      routerLinkActive="router-link-active"
+      class="btn btn-success btn-signup m-1"
+      title="Signup"
+      data-target="#pop-signup"
+      data-toggle="modal"
+      >Sign Up</a
+    >
+  </span>
+
+  <span>
+    <a
+      [routerLink]="['/login']"
+      routerLinkActive="router-link-active"
+      class="btn btn-primary btn-login m-1"
+      title="Login"
+      data-target="#pop-login"
+      data-toggle="modal"
+      >Log In</a
+    >
+  </span>
+</div>
+
+<div class="row m-0 p-0 text-light">
+  <div class="col-md m-0 p-0">
+    <h3 class="display-4 bg-dark m-0 p-0">How to compare Stock Prices</h3>
+    <a href="#" class="btn btn-primary">Learn</a>
+  </div>
+  <div class="col-md m-0 p-0">
+    <h3 class="display-4 bg-secondary m-0 p-0">How to view company details</h3>
+    <a href="#" class="btn btn-primary">Learn</a>
+  </div>
+  <div class="col-md m-0 p-0">
+    <h3 class="display-4 bg-dark m-0 p-0">How to check upcoming IPO</h3>
+    <a href="#" class="btn btn-primary">Learn</a>
+  </div>
+</div>
